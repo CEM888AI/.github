@@ -1,53 +1,47 @@
-# CEM888.AI — Sovereign AI Infrastructure
+# CEM888.AI — Sovereign, Provider-Neutral Agent Runtime
 
-**Built solo. Shipped. Proven.**
+**State decides what is true. Models decide what to do about it.**
 
-CEM888 is sovereign AI infrastructure that runs on YOUR machine. Persistent memory. Desktop commander. Multi-agent orchestration. No cloud. No surveillance. No keys.
+CEM888 is a local-first state and control layer that runs underneath AI agents: deterministic memory, tool governance, and verification, with the reasoning model treated as a replaceable driver rather than the source of truth. The goal is agents — on Claude, GPT, DeepSeek, Gemini, or a fully local model — that behave reliably over long-running, multi-session work instead of drifting, over-calling tools, or reporting completion that never happened.
 
----
+## The problem
 
-### 🧠 What We Built
+Most agent frameworks let the model hold the state: what happened, what's true right now, whether a task actually finished. That means every new session starts blind, every provider swap resets context, and "the agent said it's done" is the only completion signal you get. CEM888 inverts that: an external, deterministic runtime owns state, memory, and verification; the model is called in to reason and act, and its output is checked against that state rather than trusted at face value.
 
-| Capability | Status |
-|-----------|--------|
-| **Persistent Memory** | 5-layer neural tree — remembers everything, forever |
-| **Desktop Commander** | Controls any app on your machine, hands-free |
-| **Multi-Agent Orchestration** | Agents coordinate, self-heal, restart each other |
-| **Cross-Model Routing** | Dumb tasks → cheap models. Smart tasks → frontier models |
-| **24/7 Autonomous** | Works while you sleep. Cron, scheduling, background ops |
-| **Local-First** | Nothing leaves your machine. Nothing to breach. Nothing to subpoena. |
+## What's different about the architecture
 
----
+- **Deterministic state authority** — a runtime-owned record of what's true, independent of any one model's context window or recollection of the conversation
+- **Minimal Sufficient Context (MSCC) compilation** — a small, bounded context packet is compiled for each turn instead of replaying growing conversation history into the model
+- **Tool governance / action authority** — the model proposes actions; a separate authority layer decides whether they're allowed to run, and at what scope
+- **Deterministic verification & completion receipts** — a claim of "done" is checked against evidence (file diffs, executed commands, recorded state changes), not accepted because the model asserted it
+- **Provider-neutral execution** — the same runtime and state layer runs behind Claude, GPT, DeepSeek, Gemini, or a fully local model; swapping the model doesn't reset the agent's state
+- **Failure containment, retry, and exactly-once semantics** — turns, retries, and duplicate completions are handled as a lifecycle problem, not left to model discretion
+- **Local-first, BYOK execution** — each agent runs on its owner's own machine against their own model access; there is no central server holding customer state
 
-### 📊 Benchmarks (Public — Clone & Verify)
+Full write-ups with real before/after measurements → **[runtime-case-studies](https://github.com/CEM888AI/runtime-case-studies)**
 
-| Benchmark | Our Score | Competitor | Their Score | Funding |
-|-----------|----------|------------|-------------|---------|
-| **LongMemEval AR** | **99.9%** | Mem0 | 93.4% | $24M |
-| **BEAM 10M** | **77.2%** (Vetta) | Mem0 | 70.1% (1M) | $24M |
-| **BEAM 10M** | **78.2%** (CEM) | Hindsight | 64.1% | — |
+## In numbers
 
-→ [github.com/CEM888AI/benchmarks](https://github.com/CEM888AI/benchmarks)
-→ Raw JSONL data. No fine-tuning. No prompt engineering. Run it yourself.
+- **99.9%** (1,998/2,000) on MemoryAgentBench AR, live agent, no answer-key access — next-best published score on the same benchmark is 71.8%. [Full result →](https://github.com/CEM888AI/benchmarks)
+- A runaway **207-message** context window, caused by a backward-search anchoring bug, bounded down to a **1,010-token** task-relevant context packet. [Case study →](https://github.com/CEM888AI/runtime-case-studies/blob/main/case-study-context-window-bounding.md)
+- A live workflow cut from **4 model calls / 25.6s** to **1 model call / 15.7s** by scoping the tool schema surface to what the turn actually needed, out of 84 registered tools (~29.3K schema tokens). [Case study →](https://github.com/CEM888AI/runtime-case-studies/blob/main/case-study-tool-schema-scoping.md)
 
----
+## Evidence
 
-### 💰 Business Model
+| What | Where |
+|---|---|
+| Memory retrieval benchmarks — raw data, reproducible, sourced | [CEM888AI/benchmarks](https://github.com/CEM888AI/benchmarks) |
+| Engineering case studies — problem → root cause → fix → measurement | [CEM888AI/runtime-case-studies](https://github.com/CEM888AI/runtime-case-studies) |
+| Conceptual architecture | [runtime-case-studies/architecture.md](https://github.com/CEM888AI/runtime-case-studies/blob/main/architecture.md) |
+| Live product | [cem888.ai](https://cem888.ai) |
+| Agent interview demo | [cem888.ai/agent-interviews.html](https://cem888.ai/agent-interviews.html) |
 
-- **$18/month** — unlimited agents, persistent memory
-- **Pre-purchase credits** at corporate rates. We pay APIs at enterprise rates.
-- **Arbitrage spread** is our margin. No markup. No hidden fees.
-- Users never see, touch, or manage a single API key.
+## Why the engine itself isn't here
 
----
+CEM888's runtime internals, memory indexing, tool-governance logic, and provider routing are proprietary and stay private. This organization is where the evidence lives: benchmarks with raw, reproducible data, and case studies with real measurements from the running system — without shipping the implementation that produces them. See [runtime-case-studies](https://github.com/CEM888AI/runtime-case-studies) for exactly what's shown and what's intentionally withheld.
 
-### 🏗️ Built By
+## About
 
-**Chandler Morone** — solo founder, full-stack engineer. $80K of her own money. 5 months. One product that actually works.
+Built solo by **Chandler Morone** — self-taught engineer, founder of CEM888. Background before software: dressage trainer, TIG fabricator, self-taught builder of cars, motorcycles, and businesses. Building CEM888 full-time, using AI coding agents as engineering labor while owning the architecture, debugging, acceptance criteria, and system design directly — that division of labor is part of the engineering story, not something hidden behind it. More: [runtime-case-studies/about.md](https://github.com/CEM888AI/runtime-case-studies/blob/main/about.md)
 
-→ [cem888.ai](https://cem888.ai)
-→ [creator@cem888.ai](mailto:creator@cem888.ai)
-
----
-
-*Sovereign AI infrastructure. Your machine. Your rules.* ☥
+→ [cem888.ai](https://cem888.ai) · creator@cem888.ai
