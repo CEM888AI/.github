@@ -38,7 +38,7 @@ Full write-ups with real before/after measurements → **[runtime-case-studies](
 
 ## Why the engine itself isn't here
 
-CEM888's runtime internals, memory indexing, tool-governance logic, and provider routing are proprietary and stay private. This organization is where the evidence lives: benchmarks with raw, reproducible data, and case studies with real measurements from the running system — without shipping the implementation that produces them. See [runtime-case-studies](https://github.com/CEM888AI/runtime-case-studies) for exactly what's shown and what's intentionally withheld.
+CEM888's runtime internals, memory indexing, tool-governance logic, and provider routing are proprietary and stay private. What's public here is the evidence: benchmarks with raw, reproducible data, and case studies with real measurements from the running system — without shipping the implementation that produces them. See [runtime-case-studies](https://github.com/CEM888AI/runtime-case-studies) for exactly what's shown and what's intentionally withheld.
 
 ## About
 
