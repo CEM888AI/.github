@@ -1,7 +1,11 @@
-# CEM888.AI - funding configuration
-# Applies account-wide to every public repository under this account.
+# CEM888.AI funding configuration
+# Renders the "Sponsor" button across CEM888AI repositories.
 
-# GitHub Sponsors is not approved on this account yet, so the Sponsors button
-# stays hidden until that clears. The entry below goes live the moment it does
-# - no further change is needed here.
-github: [CEM888AI]
+ko_fi: cem888ai
+custom:
+  - https://donate.stripe.com/cNi28q5WA3l4bVQaqnfbq02
+  - https://donate.stripe.com/6oU14m3Os3l47FA41Zfbq03
+  - https://cem888.ai
+
+# Uncomment once enrolled in GitHub Sponsors (0% platform fee on personal accounts):
+# github: CEM888AI
