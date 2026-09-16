@@ -1,0 +1,16 @@
+# CEM888.AI account-wide funding configuration. Renders the "Sponsor" button on
+# every CEM888AI repository that does not define its own FUNDING.yml.
+#
+# LOCATION MATTERS: GitHub requires FUNDING.yml to sit in a `.github` folder,
+# so this file lives at `.github/FUNDING.yml` INSIDE the `.github` repository.
+# The copy at the repository root is NOT read by GitHub and renders no button.
+#
+# GitHub Sponsors is NOT enabled yet (enrollment pending):
+# github: CEM888AI
+
+ko_fi: cem888ai
+
+custom:
+  - "https://donate.stripe.com/6oU14m3Os3l47FA41Zfbq03"   # sponsor monthly
+  - "https://donate.stripe.com/cNi28q5WA3l4bVQaqnfbq02"   # give once
+  - "https://cem888.ai/support.html"                      # funding hub
