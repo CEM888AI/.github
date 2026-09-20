@@ -3,7 +3,9 @@
 **State decides what is true. Models decide what to do about it.**
 
 > ### ⭐ The project: [CEM888AI/cem888](https://github.com/CEM888AI/cem888)
-> Open source (AGPL-3.0) · first public beta v1.0.3 · [Install](https://github.com/CEM888AI/cem888#get-cem888) · [cem888.ai](https://cem888.ai) · [💗 Sponsor](https://ko-fi.com/cem888ai)
+> Open source (AGPL-3.0) · first public beta v1.0.3 · **[Create a free account & download](https://cem888.ai/register.html)** · [cem888.ai](https://cem888.ai) · [💗 Sponsor](https://ko-fi.com/cem888ai)
+>
+> **To use CEM888, create a free account at cem888.ai, sign in, and download it for your machine. No payment required.** GitHub is the source, not the installer.
 
 CEM888 is a local-first state and control layer that runs underneath AI agents: deterministic memory, tool governance, and verification, with the reasoning model treated as a replaceable driver rather than the source of truth. The goal is agents — on Claude, GPT, DeepSeek, Gemini, or a fully local model — that behave reliably over long-running, multi-session work instead of drifting, over-calling tools, or reporting completion that never happened.
 
@@ -31,7 +33,7 @@ Most agent frameworks let the model hold the state: what happened, what's true r
 
 | Repo | What it is |
 |---|---|
-| ⭐ [**cem888**](https://github.com/CEM888AI/cem888) | **The runtime** — source, install, license (AGPL-3.0 + commercial) |
+| ⭐ [**cem888**](https://github.com/CEM888AI/cem888) | **The runtime** — source code and license (AGPL-3.0 + commercial). To use it, [create a free account at cem888.ai](https://cem888.ai/register.html) |
 | [benchmarks](https://github.com/CEM888AI/benchmarks) | Memory-retrieval benchmarks — raw data, reproducible, sourced |
 | [runtime-case-studies](https://github.com/CEM888AI/runtime-case-studies) | Engineering case studies — problem → root cause → fix → measurement |
 | [agent-systems-lab](https://github.com/CEM888AI/agent-systems-lab) | Production agent reliability evidence |
