@@ -3,7 +3,7 @@
 **State decides what is true. Models decide what to do about it.**
 
 > ### ⭐ The project: [CEM888AI/cem888](https://github.com/CEM888AI/cem888)
-> Open source (AGPL-3.0) · first public beta v1.0.3 · **[Create a free account & download](https://cem888.ai/register.html)** · [cem888.ai](https://cem888.ai) · [💗 Sponsor](https://ko-fi.com/cem888ai)
+> Open source (AGPL-3.0) · first public beta v1.0.3 · **[Create a free account & download](https://cem888.ai/register.html)** · [cem888.ai](https://cem888.ai)
 >
 > **To use CEM888, create a free account at cem888.ai, sign in, and download it for your machine. No payment required.** GitHub is the source, not the installer.
 
@@ -25,9 +25,11 @@ Most agent frameworks let the model hold the state: what happened, what's true r
 
 ## In numbers
 
-- **99.9%** (1,998/2,000) on MemoryAgentBench AR, live agent, no answer-key access — next-best published score on the same benchmark is 71.8%. [Full result →](https://github.com/CEM888AI/benchmarks)
+- **BEAM-10M 77.2%** (154.4 / 200), benchmark of record: live agent, no answer-key access. [Method + per-question data →](https://github.com/CEM888AI/benchmarks)
+- **Runtime evaluation: 9 / 9 pass**, with the authority-boundary mechanism rated partial (durable state, kill-and-recover, model swap, verified execution, authority boundary, unknown state, provenance, contradiction/freshness, failure recovery). Performed by an AI engineering assistant on Hugging Face Jobs infrastructure, September 18, 2026; single evaluator, Debian 13, DeepSeek provider family only; not an official Hugging Face evaluation or endorsement. [Evaluation →](https://huggingface.co/datasets/CEM888AI/cem888-independent-runtime-evaluation)
 - A runaway **207-message** context window, caused by a backward-search anchoring bug, bounded down to a **1,010-token** task-relevant context packet. [Case study →](https://github.com/CEM888AI/runtime-case-studies/blob/main/case-study-context-window-bounding.md)
 - A live workflow cut from **4 model calls / 25.6s** to **1 model call / 15.7s** by scoping the tool schema surface to what the turn actually needed, out of 84 registered tools (~29.3K schema tokens). [Case study →](https://github.com/CEM888AI/runtime-case-studies/blob/main/case-study-tool-schema-scoping.md)
+- MemoryAgentBench AR, **retrieval only**: 99.9% (1,998 / 2,000). [Raw data →](https://github.com/CEM888AI/benchmarks)
 
 ## Repositories
 
@@ -49,4 +51,4 @@ The runtime is free and open source under **AGPL-3.0** — individuals, builders
 
 Built solo by **Chandler Morone** — self-taught engineer, founder of CEM888. Background before software: dressage trainer, TIG fabricator, self-taught builder of cars, motorcycles, and businesses. Building CEM888 full-time, using AI coding agents as engineering labor while owning the architecture, debugging, acceptance criteria, and system design directly — that division of labor is part of the engineering story, not something hidden behind it. More: [runtime-case-studies/about.md](https://github.com/CEM888AI/runtime-case-studies/blob/main/about.md)
 
-→ [cem888.ai](https://cem888.ai) · creator@cem888.ai · [💗 Sponsor](https://ko-fi.com/cem888ai)
+→ [cem888.ai](https://cem888.ai) · creator@cem888.ai · [Sponsors](https://github.com/CEM888AI/CEM888AI/blob/main/SPONSORS.md)
