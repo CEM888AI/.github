@@ -3,7 +3,7 @@
 **State decides what is true. Models decide what to do about it.**
 
 > ### ⭐ The project: [CEM888AI/cem888](https://github.com/CEM888AI/cem888)
-> Open source (AGPL-3.0) · first public beta v1.0.3 · **[Create a free account & download](https://cem888.ai/register.html)** · [cem888.ai](https://cem888.ai)
+> Source-available (Elastic License 2.0 — never converts) · first public beta v1.0.3 · **[Create a free account & download](https://cem888.ai/register.html)** · [cem888.ai](https://cem888.ai)
 >
 > **To use CEM888, create a free account at cem888.ai, sign in, and download it for your machine. No payment required.** GitHub is the source, not the installer.
 
@@ -35,7 +35,7 @@ Most agent frameworks let the model hold the state: what happened, what's true r
 
 | Repo | What it is |
 |---|---|
-| ⭐ [**cem888**](https://github.com/CEM888AI/cem888) | **The runtime** — source code and license (AGPL-3.0 + commercial). To use it, [create a free account at cem888.ai](https://cem888.ai/register.html) |
+| ⭐ [**cem888**](https://github.com/CEM888AI/cem888) | **The runtime** — source code and license (Elastic License 2.0 + commercial). To use it, [create a free account at cem888.ai](https://cem888.ai/register.html) |
 | [benchmarks](https://github.com/CEM888AI/benchmarks) | Memory-retrieval benchmarks — raw data, reproducible, sourced |
 | [runtime-case-studies](https://github.com/CEM888AI/runtime-case-studies) | Engineering case studies — problem → root cause → fix → measurement |
 | [agent-systems-lab](https://github.com/CEM888AI/agent-systems-lab) | Production agent reliability evidence |
@@ -45,7 +45,7 @@ Live product: [cem888.ai](https://cem888.ai) · Agent interview demo: [cem888.ai
 
 ## Licensing
 
-The runtime is free and open source under **AGPL-3.0** — individuals, builders, startups and companies can use and build on it, including commercially, under AGPL terms. Keeping a CEM888-based implementation proprietary (embedding, white-labeling, reselling, closed hosted service) requires a **negotiated commercial license** → creator@cem888.ai. Sponsorship is separate and buys no license.
+The runtime is source-available under the **Elastic License 2.0 (ELv2)** — ELv2 never converts into an open-source license. You may use, copy, distribute and modify the runtime; you may not provide it to third parties as a hosted or managed service, and you may not circumvent the license key functionality. **Business production use requires a paid commercial license from CEM Unlimited LLC.** Embedding, white-labeling, reselling, and OEM distribution require a **negotiated commercial license** → creator@cem888.ai. Release history: v1.0.3 remains AGPL-3.0, and v1.0.4 plus later versions released under Business Source License 1.1 remain under those terms. Sponsorship is separate and buys no license.
 
 ## About
 
