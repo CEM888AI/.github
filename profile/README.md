@@ -2,10 +2,10 @@
 
 **State decides what is true. Models decide what to do about it.**
 
-> ### ⭐ The project: [CEM888AI/cem888](https://github.com/CEM888AI/cem888)
-> Source-available (CEM888 Source-Available Commercial License — never converts) · first public beta v1.0.3 · **[Create a free account & download](https://cem888.ai/register.html)** · [cem888.ai](https://cem888.ai)
+> ### ⭐ The product: **[cem888.ai](https://cem888.ai/register.html)** — free account, download for your machine
+> Licensed under the **CEM888 Source-Available Commercial License** (never converts) · current release line **v1.0.46** · **[Create a free account & download](https://cem888.ai/register.html)**
 >
-> **To use CEM888, create a free account at cem888.ai, sign in, and download it for your machine. No payment required.** GitHub is the source, not the installer.
+> **The runtime source is private.** This account publishes the evidence layer — architecture, engineering case studies, benchmarks, and current status — not the proprietary implementation. **To use CEM888, create a free account at cem888.ai, sign in, and download it for your machine. No payment required.**
 
 CEM888 is a local-first state and control layer that runs underneath AI agents: deterministic memory, tool governance, and verification, with the reasoning model treated as a replaceable driver rather than the source of truth. The goal is agents — on Claude, GPT, DeepSeek, Gemini, or a fully local model — that behave reliably over long-running, multi-session work instead of drifting, over-calling tools, or reporting completion that never happened.
 
@@ -31,21 +31,48 @@ Most agent frameworks let the model hold the state: what happened, what's true r
 - A live workflow cut from **4 model calls / 25.6s** to **1 model call / 15.7s** by scoping the tool schema surface to what the turn actually needed, out of 84 registered tools (~29.3K schema tokens). [Case study →](https://github.com/CEM888AI/runtime-case-studies/blob/main/case-study-tool-schema-scoping.md)
 - MemoryAgentBench AR, **retrieval only**: 99.9% (1,998 / 2,000). [Raw data →](https://github.com/CEM888AI/benchmarks)
 
+## Where the product is now — 2026-10-17
+
+Status is stated per capability from the engineering record. **Shipped** means implemented and released in a product lane. **In progress** means open work with a tracked defect — it is not claimed as complete. Nothing here is a roadmap promise.
+
+**Shipped**
+
+- **Two product lanes, one build pipeline** — a free agent download and a paid lane carrying agent + desktop app, each with its own installer, manifest, and artifact verification.
+- **CEM888 Workspace** — desktop app (Tauri + React): a Control Room, chat with host selection across Claude / Codex / DeepSeek on separate per-host threads, and Rooms for State, Decisions, Writes, Receipts, Connections, Agents and Settings. The paid installer now launches the app on first install.
+- **Receipts** — two distinct surfaces: hash receipts and tool receipts. Fail-closed receipt binding, and tool receipts plus memory disposition ship in the paid agent payload.
+- **Connections** — a provider catalog with live probes; GitHub is a first-class provider row with a real connectivity probe. Credentials use OS-native storage, never a plaintext `.env`.
+- **Persistent state** — SQLite as local durable truth with typed lifecycle and explicit supersession; typed active-work state driven by lifecycle events rather than prose; multi-session write safety (lock / compare-and-swap) instead of blind overwrite.
+- **Checkpoints** — the customer API can both open and close a checkpoint.
+- **Provider connections** — the server half of the subscription OAuth device-code flow is implemented; subscription sign-in no longer runs before the agent binary is on `PATH`.
+- **Agent extensibility** — plugin/skill packaging with an owner hard-NO gate, and typed primitive contracts across Connections → Missions → Activity → Outputs → Evaluations.
+- **Update merging** — updates are additive and never destroy local work; the agent lane receives engine updates through the paid carrier.
+
+**In progress (not claimed as complete)**
+
+- Checkpoint and receipt quality, and the full checkpoints browser surface.
+- Streaming chat parity — token streaming, activity line, steer, stop, pin.
+- Subscription and provider parity for the Claude-only and Codex lanes inside the Workspace terminal.
+- Shared task continuity and takeover across multiple agent hosts.
+- Three-way merge (retaining local work is in place; the merge itself is deferred) and receive-only paid update controls.
+- Mobile live-remote workspace.
+- A turn-truth contract that makes every turn self-proving from the app through the runtime and back.
+
 ## Repositories
 
 | Repo | What it is |
 |---|---|
-| ⭐ [**cem888**](https://github.com/CEM888AI/cem888) | **The runtime** — source code and license (source-available + commercial). To use it, [create a free account at cem888.ai](https://cem888.ai/register.html) |
+| **cem888** *(private)* | **The runtime source** — private. Proprietary implementation, licensing and audit record; access is granted to licensees and design partners, not published. To use the product, [create a free account at cem888.ai](https://cem888.ai/register.html) |
 | [benchmarks](https://github.com/CEM888AI/benchmarks) | Memory-retrieval benchmarks — raw data, reproducible, sourced |
-| [runtime-case-studies](https://github.com/CEM888AI/runtime-case-studies) | Engineering case studies — problem → root cause → fix → measurement |
+| [runtime-case-studies](https://github.com/CEM888AI/runtime-case-studies) | Engineering case studies and current status — problem → root cause → fix → measurement |
 | [agent-systems-lab](https://github.com/CEM888AI/agent-systems-lab) | Production agent reliability evidence |
+| [cem888-plugins](https://github.com/CEM888AI/cem888-plugins) | Plugin marketplace packaging — skill/plugin distribution for CEM888 agents |
 | [legal](https://github.com/CEM888AI/legal) | Terms, Privacy, EULA, IP |
 
 Live product: [cem888.ai](https://cem888.ai) · Agent interview demo: [cem888.ai/agent-interviews.html](https://cem888.ai/agent-interviews.html)
 
 ## Licensing
 
-The runtime is source-available under the **CEM888 Source-Available Commercial License** — it never converts into an open-source license. It is **free for personal, non-commercial use**: you may read, audit, copy, modify and distribute it for yourself. **Nothing that makes money, or builds a business, is free** — business production use, paid client work, embedding, resale, white-labeling, OEM distribution, and offering it to third parties as a hosted or managed service all require a **paid commercial license from CEM Unlimited LLC.** Embedding, white-labeling, reselling, and OEM distribution require a **negotiated commercial license** → creator@cem888.ai. Release history: v1.0.3 remains AGPL-3.0, and v1.0.4 plus later versions released under Business Source License 1.1 remain under those terms. Sponsorship is separate and buys no license.
+The runtime source is **not published publicly**. The software is licensed under the **CEM888 Source-Available Commercial License** — it never converts into an open-source license. It is **free for personal, non-commercial use**: with the copy you are issued, you may read, audit, copy, modify and distribute it for yourself. Source access for audit is available to licensees and design partners on request. **Nothing that makes money, or builds a business, is free** — business production use, paid client work, embedding, resale, white-labeling, OEM distribution, and offering it to third parties as a hosted or managed service all require a **paid commercial license from CEM Unlimited LLC.** Embedding, white-labeling, reselling, and OEM distribution require a **negotiated commercial license** → creator@cem888.ai. Release history: v1.0.3 remains AGPL-3.0; versions first released under Business Source License 1.1 or the Elastic License 2.0 remain under those terms. Sponsorship is separate and buys no license.
 
 ## About
 
