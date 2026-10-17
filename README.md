@@ -22,7 +22,7 @@ Full write-ups with real before/after measurements → **[runtime-case-studies](
 
 ## In numbers
 
-- **99.9%** (1,998/2,000) on MemoryAgentBench AR, live agent, no answer-key access — next-best published score on the same benchmark is 71.8%. [Full result →](https://github.com/CEM888AI/benchmarks)
+- **MemoryAgentBench AR, retrieval only: 99.9%** (1,998/2,000), no answer-key access — best published AR score on the same benchmark is 71.8% (GPT-4.1-mini, raw LLM with the full context window). This is a benchmark-specific retrieval result, not a claim that every CEM888 task is 99.9% accurate. [Full result →](https://github.com/CEM888AI/benchmarks)
 - A runaway **207-message** context window, caused by a backward-search anchoring bug, bounded down to a **1,010-token** task-relevant context packet. [Case study →](https://github.com/CEM888AI/runtime-case-studies/blob/main/case-study-context-window-bounding.md)
 - A live workflow cut from **4 model calls / 25.6s** to **1 model call / 15.7s** by scoping the tool schema surface to what the turn actually needed, out of 84 registered tools (~29.3K schema tokens). [Case study →](https://github.com/CEM888AI/runtime-case-studies/blob/main/case-study-tool-schema-scoping.md)
 
